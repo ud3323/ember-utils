@@ -8,9 +8,9 @@
 
 var obj;
 
-module("SC.tryToPerform", {
+module("Ember.tryToPerform", {
   setup: function() {
-    obj = SC.Object.create({
+    obj = Ember.Object.create({
       foo: "bar",
       total: 12345,
       aMethodThatExists: function() {},
@@ -27,15 +27,15 @@ module("SC.tryToPerform", {
 });
 
 test("Should return false when asked to perform a method it does not have", function() {
-  equals(SC.tryToPerform(obj, 'aMethodThatDoesNotExist'), false);
+  equals(Ember.tryToPerform(obj, 'aMethodThatDoesNotExist'), false);
   equals(obj.tryToPerform('aMethodThatDoesNotExist'), false);
 });
 
-test("SC.tryToPerform -- Should pass back the return true if method returned true, false if method not implemented or returned false", function() {
-  equals(SC.tryToPerform(obj, 'aMethodThatReturnsTrue'), true, 'method that returns true');
-  equals(SC.tryToPerform(obj, 'aMethodThatReturnsFoobar'), true, 'method that returns non-false');
-  equals(SC.tryToPerform(obj, 'aMethodThatReturnsFalse'), false, 'method that returns false');
-  equals(SC.tryToPerform(obj, 'imaginaryMethod'), false, 'method that is not implemented');
+test("Ember.tryToPerform -- Should pass back the return true if method returned true, false if method not implemented or returned false", function() {
+  equals(Ember.tryToPerform(obj, 'aMethodThatReturnsTrue'), true, 'method that returns true');
+  equals(Ember.tryToPerform(obj, 'aMethodThatReturnsFoobar'), true, 'method that returns non-false');
+  equals(Ember.tryToPerform(obj, 'aMethodThatReturnsFalse'), false, 'method that returns false');
+  equals(Ember.tryToPerform(obj, 'imaginaryMethod'), false, 'method that is not implemented');
 });
 
 test("obj.tryToPerform -- Should pass back the return true if method returned true, false if method not implemented or returned false", function() {

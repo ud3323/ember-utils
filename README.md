@@ -24,10 +24,10 @@ In order to use the Utils package, you'll need:
 ### Install:
 
 You can use the Utils package by either downloading the JavaScript files
-provided in the [Downloads section](https://github.com/sproutcore/sproutcore-utils/archives/master)
+provided in the [Downloads section](https://github.com/sproutcore/ember-utils/archives/master)
 of this repository or using [BPM](http://getbpm.org/). To install it via BPM, simply run
 
-    bpm add sproutcore-utils
+    bpm add ember-utils
 
 And this will handle adding all of its dependencies as well. You, of course, need to
 be using BPM for your application or package for this to work ;)

@@ -8,9 +8,9 @@
 
 var obj;
 
-module("SC.respondsTo", {
+module("Ember.respondsTo", {
   setup: function() {
-    obj = SC.Object.create({
+    obj = Ember.Object.create({
       foo: "bar",
       total: 12345,
       aMethodThatExists: function() {},
@@ -26,9 +26,9 @@ module("SC.respondsTo", {
   
 });
 
-test("Checks if methods exist using the 'SC.respondsTo' method", function() {
-  equals(SC.respondsTo(obj, 'aMethodThatExists'), true);
-  equals(SC.respondsTo(obj, 'aMethodThatDoesNotExist'), false);
+test("Checks if methods exist using the 'Ember.respondsTo' method", function() {
+  equals(Ember.respondsTo(obj, 'aMethodThatExists'), true);
+  equals(Ember.respondsTo(obj, 'aMethodThatDoesNotExist'), false);
 });
 
 

@@ -35,7 +35,7 @@ end
 SproutCore::Compiler.output = "tmp/static"
 
 def compile_utils_task
-  SproutCore::Compiler.intermediate = "tmp/sproutcore-utils"
+  SproutCore::Compiler.intermediate = "tmp/ember-utils"
   js_tasks = SproutCore::Compiler::Preprocessors::JavaScriptTask.with_input "lib/**/*.js", "."
   SproutCore::Compiler::CombineTask.with_tasks js_tasks, "#{SproutCore::Compiler.intermediate.gsub(/tmp\//, "")}"
 end
@@ -44,29 +44,29 @@ task :compile_utils_task => compile_utils_task
 
 task :build => [:compile_utils_task]
 
-file "dist/sproutcore-utils.js" => :build do
-  puts "Generating sproutcore-utils.js"
+file "dist/ember-utils.js" => :build do
+  puts "Generating ember-utils.js"
   
   mkdir_p "dist"
   
-  File.open("dist/sproutcore-utils.js", "w") do |file|
-    file.puts strip_require("tmp/static/sproutcore-utils.js")
+  File.open("dist/ember-utils.js", "w") do |file|
+    file.puts strip_require("tmp/static/ember-utils.js")
   end
 end
 
-# Minify dist/sproutcore-utils.js to dist/sproutcore-utils.min.js
-file "dist/sproutcore-utils.min.js" => "dist/sproutcore-utils.js" do
-  puts "Generating sproutcore-utils.min.js"
+# Minify dist/ember-utils.js to dist/ember-utils.min.js
+file "dist/ember-utils.min.js" => "dist/ember-utils.js" do
+  puts "Generating ember-utils.min.js"
   
-  File.open("dist/sproutcore-utils.prod.js", "w") do |file|
-    file.puts strip_sc_assert("dist/sproutcore-utils.js")
+  File.open("dist/ember-utils.prod.js", "w") do |file|
+    file.puts strip_sc_assert("dist/ember-utils.js")
   end
   
-  File.open("dist/sproutcore-utils.min.js", "w") do |file|
-    file.puts uglify("dist/sproutcore-utils.prod.js")
+  File.open("dist/ember-utils.min.js", "w") do |file|
+    file.puts uglify("dist/ember-utils.prod.js")
   end
 end
 
-task :dist => ["dist/sproutcore-utils.min.js"]
+task :dist => ["dist/ember-utils.min.js"]
 
 task :default => :dist

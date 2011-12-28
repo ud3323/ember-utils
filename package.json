@@ -1,7 +1,7 @@
 {
-  "name": "sproutcore-utils",
-  "summary": "SproutCore Utilities",
-  "description": "A collection of utility functions for SproutCore",
+  "name": "ember-utils",
+  "summary": "Ember Utilities",
+  "description": "A collection of utility functions for Ember",
   "homepage": "http://sproutcore.com",
   "author": "Strobe Inc., Apple, Inc., and contributors",
   "version": "2.0.beta.2",
@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "spade": "~> 1.0",
-    "sproutcore-runtime": ">= 0"
+    "ember-runtime": ">= 0"
   },
   "dependencies:development": {
     "spade-qunit": "~> 1.0.0"
@@ -23,7 +23,7 @@
       ],
       "modes": "*"
     },
-    "sproutcore-utils/bpm_tests.js": {
+    "ember-utils/bpm_tests.js": {
       "directories": [
         "tests"
       ],
