@@ -2,9 +2,9 @@
   "name": "ember-utils",
   "summary": "Ember Utilities",
   "description": "A collection of utility functions for Ember",
-  "homepage": "http://sproutcore.com",
+  "homepage": "http://emberjs.com",
   "author": "Strobe Inc., Apple, Inc., and contributors",
-  "version": "2.0.beta.2",
+  "version": "0.9",
   "bpm": "1.0.0",
   "directories": {
     "lib": "lib"
